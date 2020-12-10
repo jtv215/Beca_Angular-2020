@@ -1,0 +1,33 @@
+<div class="container border border-success border-bottom-0 mt-5">
+    <h3>Componente 1</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="number" id="input" value="{{contador}}" (change)="functionBuilding()">
+            <br>
+            <button type="button" (click)="btnIntercambiar()"
+                class="mb-4 mt-4 btn btn-primary btn-blok">Intercambiar</button>
+        </div>
+
+        <div class="col-md-8" >
+            <h4>Información del curso</h4>
+            <p>Curson 1: {{curso1.nombre}} - {{curso1.descripcion}} - Total días: {{curso1.total_dias}} </p>
+            <p>Curson 2: {{curso2.nombre}} - {{curso2.descripcion}} - Total días: {{curso2.total_dias}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container border border-success">
+    <div class="row">
+        <div class="col-md-4 border-success border-right">
+            <app-c4></app-c4>
+        </div>
+
+        <div class="col-md-8" style="padding: 0px;">
+            <div class="border-success border-bottom ">
+                <app-c2 [dataCurso1]="curso1" [dataContador]="contador" ></app-c2>
+            </div>
+            <app-c3 [dataCurso2]="curso2" [dataContador]="contador"></app-c3>
+        </div>
+
+    </div>
+</div>

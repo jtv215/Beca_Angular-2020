@@ -1,0 +1,31 @@
+
+<div class="container">
+    <h1>Ver foto con id: {{photo.id}}</h1>
+
+    <div *ngIf="alert">
+        <div class="alert alert-success" role="alert">
+            Se ha eliminado correctamente!!! Pero en el servidor sigue existiendo :D
+            <br>
+            Hay que volver atrás para editar.
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">        
+            <div>
+                <div class="card mt-2 ml-2 mr-2 mb-2 " style="width: 18rem;">
+                   <img src={{photo.thumbnailUrl}} class="card-img-top" alt="..."> 
+                   <div class="card-body">
+                        <h5 class="card-title">{{photo.title}}</h5>
+                        <p class="card-text">{{texto}}</p>
+                        <a (click)="irAtras()" class="btn btn-primary">Atrás</a>                        
+                        <a [routerLink]="['/editar',photo.id]" class="btn btn-warning ml-3">Editar</a>
+                        <a (click)="deletePhoto(photo.id)" class="btn btn-danger ml-3">Borrar</a>
+                    </div> 
+                </div>
+
+            </div>
+       
+    </div>
+</div>

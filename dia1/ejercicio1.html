@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Primer ejercicio</title>
+    <!-- <script type="text/javascript" src="funciones.js"></script> -->
+</head>
+
+<body>
+    <div class="primero">
+        <p>La Suma de 2 números: </p>
+        <div>
+            <input id="c" onchange="sumar(document.getElementById('c').value,document.getElementById('d').value)"> <br>
+            <br>
+            <input id="d" onchange="sumar(document.getElementById('c').value,document.getElementById('d').value)"> <br>
+            <br>
+            <input id="e"> <br><br>
+            <div>
+                <button onmousemove="sumar(document.getElementById('c').value,document.getElementById('d').value)">
+                    Sumar </button>
+                <button onmousemove="concatenar(document.getElementById('c').value,document.getElementById('d').value)">
+                    Concatenar </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function sumar(p1, p2) {
+
+        if (p1.length == 0) {
+            p1 = 0;
+            console.log('p1: ' + p1);
+        }
+        if (p2.length == 0) {
+            p2 = 0;
+            console.log('p2:' + p2);
+        }
+        var result = parseInt(p1) + parseInt(p2);
+        console.log('La suma es:' + result);
+        document.getElementById("e").value = result;
+    }
+
+    function concatenar(p1, p2) {
+        var result = p1 + p2;
+        console.log("Contanear:" + result);
+        document.getElementById("e").value = result;
+    }   
+</script>

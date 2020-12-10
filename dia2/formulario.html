@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf 8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+    <title>Ejemplo 1</title>
+</head>
+
+<body ng-app="app">
+
+    <div ng-controller="alumnoController">
+
+        <!-- Formulario-->
+        <h1>Formulario </h1>
+        <div>
+            <form name="userForm">
+                <label for="name">Nombre del Alumno:*</label><br /> <br />
+                <input type="text" ng-model="nombre"  placeholder="Introduce un nombre"><br /> <br />
+                <button type="submit" ng-click="add()">Añadir</button>
+                <input type="button" ng-click="reset()" value="Limpiar" />
+            </form>
+        </div>
+
+        <!-- Lista de clase-->
+        <h1>Lista de alumnos</h1>
+        <ul>
+            <table>
+                <tr>
+                    <th>Nº</th>
+                    <th>Nombre</th>
+                    <th>Acción</th>
+                </tr>
+                <tr ng-repeat="item in items" ng-init="listIndex = $index">
+                    <td>{{$index+1}}</td>
+                    <td>{{item}} <i class="fa some-icon"></i></td>
+                    <td><button ng-click="remove($index)">Eliminar <i class="fa some-icon"></i></button> </td>
+                </tr>
+            </table>
+        </ul>
+    </div>
+
+</body>
+
+<script>
+    angular.module("app", []).controller('alumnoController', function ($scope) {
+        // Datos del Alumno
+        $scope.items = [
+            'Leo Messi',
+            'Neymar',
+            'Mbappé',
+            'Mohamed Salah',
+            'Cristiano Ronaldo',
+            'Eden Hazard',
+            'Karim Benzema',
+            'Antoine Griezman'
+        ];
+
+        // Añadir alumno
+        $scope.add = function () {
+            if ($scope.items.length >= 10) {
+                alert('No se puedes añadir más alumnos, El Máximo de alumnos son 10.');
+            } else {
+                $scope.items.push($scope.nombre);
+                $scope.nombre = "";
+            }
+
+        };
+
+        // Eliminar alumno
+        $scope.remove = function (index) {
+            if ($scope.items.length <= 5) {
+                alert('No puedes eliminar más alumnos, Tiene que haber un mínimo de 5 alumnos.');
+            } else {
+                $scope.items.splice(index, 1);
+                $scope.nombre = "";
+            }
+
+        };
+
+        $scope.reset = function () {
+            $scope.nombre = "";
+        };
+    });
+
+</script>
+
+</html>

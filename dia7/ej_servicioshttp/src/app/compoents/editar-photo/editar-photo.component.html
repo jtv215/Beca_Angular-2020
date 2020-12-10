@@ -1,0 +1,51 @@
+<div class="container">   
+
+    <div *ngIf="alert">
+        <div class="alert alert-success mt-5" role="alert">
+            Tus datos se han modificado correctamente!!
+            <br>
+            Mensaje del servidor:
+            <br>
+            {{message | json}}
+        </div>
+    </div>
+
+
+    <form #form="ngForm">
+        <h3>Editar Foto</h3>
+
+        <div class="form-group mb-2">
+            <label>Album ID:</label>
+            <input type="text" name="albumId" class="form-control" [(ngModel)]="photo.albumId" placeholder="Album ID" disabled/>
+
+        </div>
+
+        <div class="form-group mb-2">
+            <label>Id:</label>
+            <input type="text" name="id" [(ngModel)]="photo.id" class="form-control" placeholder="ID" disabled/>
+
+        </div>
+        <div class="form-group mb-2">
+            <label>Titulo:</label>
+            <input type="text" name="title" [(ngModel)]="photo.title"  class="form-control" placeholder="Titulo" />
+
+        </div>
+
+        <div class="form-group mb-2">
+            <label>url:</label>
+            <input type="text" name="url" [(ngModel)]="photo.url"  class="form-control" placeholder="url" />
+        </div>
+
+        <div class="form-group mb-2">
+            <label>thumbnailUrl:</label>
+            <input type="text" name="thumbnailUrl" [(ngModel)]="photo.thumbnailUrl" class="form-control" placeholder="thumbnailUrl" />
+        </div>
+    </form>
+
+    <div class="form-group mb-2">
+        <a [routerLink]="['/photo',photo.id]" class="btn btn-primary ">Atrás</a>
+        <button type="submit" class="btn btn-primary ml-3" (click)="btnEditarfoto()">Editar</button>
+        
+    </div>
+
+</div>

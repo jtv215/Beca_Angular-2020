@@ -1,0 +1,48 @@
+<div class="container">
+ <app-header></app-header>
+
+  <div class="row">
+    <section id="home">
+      <div class="jumbotron">
+        <h1 class="display-4">Beca everis Angular OKKKKK</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <app-hijopr [propiedadHijo]="personaData" ></app-hijopr>
+      </div>
+  </section>
+  <section id="uno">
+    <h3>Sección 1:</h3>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="usr">Nombre:</label>
+                <input type="text" [(ngModel)]="personaData.nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="usr">Apellidos:</label>
+                <input type="text" [(ngModel)]="personaData.apellidos" class="form-control">
+            </div>
+            
+            <button type="button" class="btn btn-primary btn-blok">Evento Angular</button>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="usr">Edad:</label>
+                <input type="text" [(ngModel)]="personaData.edad" class="form-control">
+            </div>
+            <br/><br/>
+            <app-hijo-pr [propiedadHijo]="personaData"></app-hijo-pr>
+        </div>
+    </div>
+</section> 
+  <section id="dos"> Dos</section>
+  <section id="tres">Tres</section>
+  </div>
+
+  <div class="row">
+    <app-footer></app-footer>
+  </div>
+
+</div>

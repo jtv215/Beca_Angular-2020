@@ -1,0 +1,15 @@
+<!-- Lista -->
+<h1>Lista</h1>
+
+<table border="1">
+    <tr>
+        <th>Tipo</th>
+        <th>MSISDN</th>
+        <th> Saldo</th>
+    </tr>
+    <tr *ngFor="let item of listado">
+        <td> {{item.Tipo | uppercase}}</td>
+        <td> {{item.MSISDN}}</td>
+        <td> {{item.Saldo}}</td>
+    </tr>
+</table>

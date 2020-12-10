@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#contenido {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+}
+
+.right-panel {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+
+.right-panel label, .right-panel input, .right-panel button {
+    width: 15em;
+    margin: 2px;
+}

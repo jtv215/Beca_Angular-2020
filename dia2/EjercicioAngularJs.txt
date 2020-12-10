@@ -1,0 +1,4 @@
+Crear una clase de entre 5 y 10 alumnos: 
+Esta clase debe permitir añadir Alumnos a traves de un formulario en el cual se introduzca el nombre del alumno
+Debajo del formulario debe aparecer el listado de alumnos actuales
+La aplicacion debe permitir borrar alumnos siempre y cuando el numero de alumnos sea mayor que 5 

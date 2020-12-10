@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h1>Lista de photo con servcios http</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of photos | slice:0:10; let i=index">
+            <div>
+                <div class="card mt-2 ml-2 mr-2 mb-2 " style="width: 18rem;">
+
+                    <img src={{item.thumbnailUrl}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">i{{item.id}}-{{item.title}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a [routerLink]="['/photo',item.id]" class="btn btn-primary">ver Foto</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
